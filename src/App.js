@@ -1,9 +1,14 @@
 import React, { Component } from "react";
 import "./App.css";
+import Timer from "components/Timer";
 
 class App extends Component {
   render() {
-    return <div className="App">App</div>;
+    return (
+      <div className="App">
+        <Timer />
+      </div>
+    );
   }
 }
 
