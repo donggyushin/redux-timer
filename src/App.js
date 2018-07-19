@@ -1,13 +1,17 @@
 import React, { Component } from "react";
 import "./App.css";
-import Timer from "components/Timer";
+import store from "./store";
+import { Provider } from "react-redux";
+import TimerContainer from "containers/TimerContainer";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Timer />
-      </div>
+      <Provider store={store}>
+        <div className="App">
+          <TimerContainer />
+        </div>
+      </Provider>
     );
   }
 }

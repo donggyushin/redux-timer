@@ -7,17 +7,28 @@ import {
   faStopCircle
 } from "@fortawesome/free-solid-svg-icons";
 
-const TimerBody = ({ playing }) => {
+const TimerBody = ({
+  playing,
+  clickPlayButton,
+  clickPauseButton,
+  clickStopButton
+}) => {
   return (
     <div className="TimerBody__container">
       {!playing && (
-        <FontAwesomeIcon icon={faPlayCircle} size="3x" color="#07141E" />
+        <div onClick={clickPlayButton}>
+          <FontAwesomeIcon icon={faPlayCircle} size="3x" color="#07141E" />
+        </div>
       )}
       {playing && (
-        <FontAwesomeIcon icon={faPauseCircle} size="3x" color="#07141E" />
+        <div onClick={clickPauseButton}>
+          <FontAwesomeIcon icon={faPauseCircle} size="3x" color="#07141E" />
+        </div>
       )}
       {playing && (
-        <FontAwesomeIcon icon={faStopCircle} size="3x" color="#07141E" />
+        <div onClick={clickStopButton}>
+          <FontAwesomeIcon icon={faStopCircle} size="3x" color="#07141E" />
+        </div>
       )}
     </div>
   );
